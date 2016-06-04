@@ -1,0 +1,196 @@
+@import "mixins.scss";
+@import "animations.scss";
+
+$background: #f1f1f1;
+$border: #CCC;
+$shadow: #888;
+$black: #333;
+$blue: #337ab7;
+$red: #d9534f;
+$green: #5cb85c;
+$yellow: #f0ad4e;
+$font: #7ce5bf;
+
+body { padding-top:20px; background: $background; }
+pre { margin-bottom:20px; }
+
+ul {
+  list-style-type: none;
+  padding: 0;
+} 
+
+button.btn__confirm {
+  @include button($border, $blue, #fff, 4px);
+}
+button.btn__delete {
+  @include button($border, $red, #fff, 4px);
+}
+button.btn__load {
+  @include button($border, $yellow, #fff, 4px);
+}
+button.btn__save {
+  @include button($border, $green, #fff, 4px);
+}
+
+div.btn {
+  padding: 0 15px;
+  margin: 10px 0px;
+  cursor: grab;
+  @include border-radius(4px);
+  input {
+    @include input($border, #fff, $black, 4px, .15s);
+    @include box-shadow(0, 1px, 1px, rgba(0,0,0,.075), inset);
+  }
+  input:focus {
+    border-color: #66afe9;
+    outline: 0;
+    @include box-shadow-double(0, 1px, 1px, rgba(0,0,0,.075), 0, 0, 8px, rgba(102,175,233,.6), inset);
+  }
+  label {
+    display: inline-block;
+    font-weight: 700;
+  }
+}
+
+button:active {
+  padding: 4px 8px!important;
+}
+  
+section.top {  
+  font-family: verdana;
+  width: 100%;
+  header {
+    width: 100%;
+    @include background-image(top, $background, $border);
+    @include box-shadow(0, 1px, 2px, $border);
+    padding: 10px;
+    h1 {
+      padding: 0;
+      margin: 0;
+      font-size: 16px;
+      font-weight: normal;
+      color: $shadow;
+      text-align: center;
+    }
+  }
+  div.top__left {
+    float: left;
+    width: 60%;
+    div.top__left-top {
+      border: 1px solid $border;
+      @include box-shadow(0, 1px, 5px, $border);
+      @include border-radius(4px);
+    }
+  }
+  div.top__right {
+    border: 1px solid $border;
+    @include box-shadow(0, 1px, 5px, $border);
+    @include border-radius(4px);
+    float: right;
+    width: 35%;
+    pre {
+      padding: 10px;
+    }
+  }
+}
+button {
+  margin-top: 20px;
+}
+h2, h3, .glyphicon  {
+  color: #33fab7;
+}
+p {
+  color: $font;
+  font-size: 18px;
+}
+h2 {
+  font-size: 34px;
+  margin: 0 0 20px 0;
+}
+label {
+  color: $font;
+  font-size:16px;
+}
+input.form-control {
+  background:#2f2f2f; 
+  color: #fff;
+}
+#form-container { 
+  background:#2f2f2f; 
+  margin-bottom:20px;
+  border-radius:5px;
+  .page-header { 
+    background:#151515; 
+    margin:0;
+    padding:30px; 
+    border-top-left-radius:5px;
+    border-top-right-radius:5px; 
+   }
+ }
+.btn-custom {
+  background: #00BC8C;
+  color: #fff;
+  font-size: 18px;
+  .glyphicon {
+    color: #fff;
+    top: 3px;
+  }
+}
+.btn-custom:hover {
+  color: #fff;
+}
+  #status-buttons {  
+    a { 
+      color:#fff;
+      display:inline-block;
+      font-size:14px;
+      margin-right:10px;
+      text-align:center;
+      text-transform:uppercase;
+    }
+    a:hover {
+      text-decoration:none;
+    }
+    span { 
+      background:#080808;
+      display:block;
+      height:30px;
+      margin:0 auto 10px;
+      padding-top:5px; 
+      width:30px; 
+      border-radius:50%; 
+    }
+    a.active span {
+      background:#00BC8C;
+    }
+  }
+
+#signup-form {
+  position:relative;
+  min-height:300px;
+  overflow:hidden;
+  padding:30px;
+}
+
+#form-views.ng-enter,
+#form-views.ng-leave { position:absolute;
+  left:30px;
+  right:30px;
+  transition:0.5s all ease;
+  -moz-transition:0.5s all ease;
+  -webkit-transition:0.5s all ease; 
+}
+    
+#form-views.ng-enter { 
+  -webkit-animation:slideInRight 0.5s both ease;
+  -moz-animation:slideInRight 0.5s both ease;
+  animation:slideInRight 0.5s both ease; 
+}
+
+#form-views.ng-leave            { 
+  -webkit-animation:slideOutLeft 0.5s both ease;
+  -moz-animation:slideOutLeft 0.5s both ease;
+  animation:slideOutLeft 0.5s both ease;   
+}
+
+

@@ -1,0 +1,29 @@
+<div class="row">
+<div class="col-sm-8 col-sm-offset-2">
+
+  <div id="form-container">
+  
+      <div class="page-header text-center">
+          <h2>Kurs BHP</h2>
+          
+          <div id="status-buttons" class="text-center">
+              <a ui-sref-active="active" ui-sref=".profil"><span>1</span> Profil</a>
+              <a ui-sref-active="active" ui-sref=".tekst"><span>2</span> Tekst</a>
+              <a ui-sref-active="active" ui-sref=".odpowiedz"><span>3</span> Odpowiedz</a>
+              <a ui-sref-active="active" ui-sref=".ostatni"><span>4</span>Koniec</a>
+          </div>
+      </div>
+      
+      <form id="signup-form" ng-submit="processForm()">
+          <div id="form-views" ui-view></div>
+      </form>
+  
+  </div>
+  
+  <pre>
+    Odpowiedzi: {{ formData }}
+  </pre>
+
+</div>
+</div>
+
